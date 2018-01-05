@@ -11,3 +11,8 @@ Also I store the scrips into my personal folder for easier backup. If you do so 
 - Install the scrips in the desirec directory
 - Change module names and paths according your needs
 - Enable the service files
+
+```shell
+git clone https://github.com/stesind/tvheadend-suspend.git
+
+```

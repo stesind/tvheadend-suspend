@@ -1,0 +1,11 @@
+[Unit]
+Description=local system suspend actions
+Before=sleep.target
+After=tvheadend-suspend.service
+
+[Service]
+Type=oneshot
+ExecStart= /sbin/modprobe -r b2c2_flexcop_pci  ; /sbin/modprobe -r b2c2_flexcop ;  /sbin/modprobe -r cx24120 ; /sbin/modprobe -r cx24113 ; /sbin/modprobe -r cx24123
+
+[Install]
+WantedBy=sleep.target

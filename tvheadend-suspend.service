@@ -1,0 +1,14 @@
+[Unit]
+Description=local system suspend actions
+Before=root-suspend.service sleep.target
+After=tvheadend-check-recordings.service
+
+[Service]
+Type=oneshot
+ExecStartPre= /home/steffen/bin/kill-kodi.sh -15 ; /home/steffen/bin/tvheadend-check-recording-logs.sh
+ExecStart= /bin/systemctl stop tvheadend
+
+[Install]
+RequiredBy=sleep.target
+
+

@@ -1,0 +1,14 @@
+[Unit]
+Description=local system resume actions
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStartPre=/sbin/modprobe cx24120 ; /sbin/modprobe cx24113 ; /sbin/modprobe cx24123 ; /sbin/modprobe b2c2_flexcop ; /sbin/modprobe b2c2_flexcop_pci  
+ExecStart=/bin/systemctl start tvheadend
+#;ExecStart=/bin/systemctl start docker-container@tvheadend.service
+#;ExecStart=/usr/bin/docker start docker-tvheadend
+
+
+[Install]
+WantedBy=suspend.target

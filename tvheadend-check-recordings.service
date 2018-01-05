@@ -1,0 +1,12 @@
+[Unit]
+Description=Inhibit suspend in case of recordings
+Before=sleep.target tvheadend-suspend.service
+
+[Service]
+Type=oneshot
+ExecStart= /home/steffen/bin/tvheadend-check-recordings.sh
+
+[Install]
+RequiredBy=sleep.target
+
+

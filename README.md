@@ -21,17 +21,17 @@ Also I store the scrips into my personal folder for easier backup. If you do so 
 ```shell
 git clone https://github.com/stesind/tvheadend-suspend.git
 cd tvheadend-suspend
-install -m 644 -o root -g root root-suspend.service /etc/systemd/system
-install -m 644 -o root -g root root-resume.service /etc/systemd/system
-install -m 644 -o root -g root tvheadend-check-recordings.service /etc/systemd/system
-install -m 644 -o root -g root tvheadend-suspend.service /etc/systemd/system
-install -d $HOME/bin
-install -m 644 -o $USER -g $USER tvheadend-check-recordings.sh $HOME/bin
+sudo install -m 644 -o root -g root root-suspend.service /etc/systemd/system
+sudo install -m 644 -o root -g root root-resume.service /etc/systemd/system
+sudo install -m 644 -o root -g root tvheadend-check-recordings.service /etc/systemd/system
+sudo install -m 644 -o root -g root tvheadend-suspend.service /etc/systemd/system
+sudo install -d $HOME/bin
+sudo install -m 644 -o $USER -g $USER tvheadend-check-recordings.sh $HOME/bin
 
-systemctl daemon-reload
-systemctl enable --now root-suspend.service
-systemctl enable --now root-resume.service
-systemctl enable --now tvheadend-check-recordings.service
-systemctl enable --now tvheadend-suspend.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now root-suspend.service
+sudo systemctl enable --now root-resume.service
+sudo systemctl enable --now tvheadend-check-recordings.service
+sudo systemctl enable --now tvheadend-suspend.service
 
 ```

@@ -25,6 +25,8 @@ install -m 644 -o root -g root root-suspend.service /etc/systemd/system
 install -m 644 -o root -g root root-resume.service /etc/systemd/system
 install -m 644 -o root -g root tvheadend-check-recordings.service /etc/systemd/system
 install -m 644 -o root -g root tvheadend-suspend.service /etc/systemd/system
+install -d $HOME/bin
+install -m 644 -o $USER -g $USER tvheadend-check-recordings.sh $HOME/bin
 
 systemctl daemon-reload
 systemctl enable --now root-suspend.service

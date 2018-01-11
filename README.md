@@ -27,6 +27,7 @@ sudo install -m 644 -o root -g root tvheadend-check-recordings.service /etc/syst
 sudo install -m 644 -o root -g root tvheadend-suspend.service /etc/systemd/system
 sudo install -d $HOME/bin
 sudo install -m 644 -o $USER -g $USER tvheadend-check-recordings.sh $HOME/bin
+sudo install -m 644 -o $USER -g $USER kill-kodi.sh $HOME/bin
 
 sudo systemctl daemon-reload
 sudo systemctl enable --now root-suspend.service
